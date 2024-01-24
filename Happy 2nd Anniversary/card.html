@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <style>
+            body {
+                font-family: '標楷體', sans-serif;
+                text-align: center;
+                background: linear-gradient(to right, #090453, #01000b);
+                color:aliceblue;
+            }
+            .center-align {
+                text-align: center; /
+            }
+            #treeButton:hover {
+                opacity: 0.8;
+            }
+            .stars {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .star {
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background-color: #fff; 
+                animation: twinkle 5s infinite; 
+            }
+
+            .star::before,
+            .star::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background-color: #fff; 
+                animation: twinkle 2s infinite; 
+            }
+
+            .star::before {
+            transform: rotate(45deg);
+            animation-duration: 1.5s; 
+        }
+
+        .star::after {
+            transform: rotate(-45deg);
+            animation-duration: 2.5s;
+        }
+
+
+        @keyframes twinkle {
+            0% { opacity: 0.1; }
+            50% { opacity: 1; }
+            100% { opacity: 0.1; }
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="stars"></div>
+        <p>欸</p>
+        </p>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const starsContainer = document.querySelector('.stars');
+                for (let i = 0; i < 200; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star';
+                    star.style.left = Math.random() * 100 + 'vw';
+                    star.style.top = Math.random() * 100 + 'vh';
+                    starsContainer.appendChild(star);
+                }
+            });
+            function tovideo(){
+                window.location.href='video.html';
+            }
+        </script>
+        
+    </body>
+</html>

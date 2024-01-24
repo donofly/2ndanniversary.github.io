@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <style>
+            body {
+                font-family: '標楷體', sans-serif;
+                text-align: center;
+                background: linear-gradient(to right, #090453, #01000b);
+                color:aliceblue;
+            }
+            .center-align {
+                text-align: center; /
+            }
+            audio::-webkit-media-controls {
+                display: none;
+            }
+            button {
+                background-color: #cac2d2; 
+                color: rgb(15, 2, 26); 
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <audio id="myAudio">
+            <source src="Moonlight.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="playButton" onclick="toggleAudio()" style="float:left;">Play/Pause</button>
+        <script>
+            function toggleAudio() {
+                var audio = document.getElementById('myAudio');
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+        }
+        </script>
+        
+    </body>
+</html>

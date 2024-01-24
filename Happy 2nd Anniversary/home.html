@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <style>
+            body {
+                font-family: '標楷體', sans-serif;
+                text-align: center;
+                justify-content: center;    
+                align-items: center;
+                background: linear-gradient(to right, #7885e9, #071657);
+                color:aliceblue;
+            }
+            .center-align {
+                text-align: center; 
+            }
+        button {
+            padding: 30px 30px;
+            font-size: 12px; 
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        button:hover {
+            opacity: 0.3; 
+        }
+        </style>
+    </head>
+    <body>
+        <button id="btn1"  style="background-color: #717fe8; position: absolute; bottom: 0; left: 0;"></button>
+        <button id="btn2" style="background-color: #112065; position: absolute; bottom: 150px; right: 100px;"></button>
+        <button id="btn3"  style="background-color: #6978e6; position: absolute; top: 150px; left: 100px;"></button>
+        <button id="btn4"  style="background-color: #18276b; position: absolute; top: 150px; right: 150px;"></button>
+        <button id="btn5" style="background-color: #b01888; position: absolute; top: 250px; left: 550px;    " disabled>先按完其他四個按鈕！</button>
+
+        <script>
+            let btn1Clicked = localStorage.getItem("btn1Clicked") === "true";
+            let btn2Clicked = localStorage.getItem("btn2Clicked") === "true";
+            let btn3Clicked = localStorage.getItem("btn3Clicked") === "true";
+            let btn4Clicked = localStorage.getItem("btn4Clicked") === "true";
+            updateBtn5State();
+    
+            document.getElementById("btn1").onclick = function() { btnClicked(1, 'food.html'); };
+            document.getElementById("btn2").onclick = function() { btnClicked(2, 'sleep.html'); };
+            document.getElementById("btn3").onclick = function() { btnClicked(3, 'picture.html'); };
+            document.getElementById("btn4").onclick = function() { btnClicked(4, 'nomeaning.html'); };
+    
+            function btnClicked(btnNumber, url) {
+                localStorage.setItem(`btn${btnNumber}Clicked`, "true");
+                window.location.href = url;
+            }
+    
+            function updateBtn5State() {
+                if (btn1Clicked && btn2Clicked && btn3Clicked && btn4Clicked) {
+                    document.getElementById("btn5").disabled = false;
+                }
+            }
+    
+            document.getElementById("btn5").addEventListener('click', function() {
+                if (this.disabled) {
+                    alert("先按完其他四個按鈕");
+                } else {
+                    window.location.href = 'card.html'; 
+                }
+            });
+        </script>
+        
+    </body>
+</html>

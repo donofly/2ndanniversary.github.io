@@ -32,7 +32,7 @@
         <button id="btn2" style="background-color: #112065; position: absolute; bottom: 150px; right: 100px;"></button>
         <button id="btn3"  style="background-color: #6978e6; position: absolute; top: 150px; left: 100px;"></button>
         <button id="btn4"  style="background-color: #18276b; position: absolute; top: 150px; right: 150px;"></button>
-        <button id="btn5" style="background-color: #b01888; position: absolute; top: 250px; left: 550px;    " disabled>先按完其他四個按鈕！</button>
+        <button id="btn5" style="background-color: #cdcab2; position: absolute; top: 250px; left: 540px;    " disabled>先按完這個畫面的其他四個按鈕！</button>
 
         <script>
             let btn1Clicked = localStorage.getItem("btn1Clicked") === "true";
@@ -41,10 +41,10 @@
             let btn4Clicked = localStorage.getItem("btn4Clicked") === "true";
             updateBtn5State();
     
-            document.getElementById("btn1").onclick = function() { btnClicked(1, 'food.html'); };
-            document.getElementById("btn2").onclick = function() { btnClicked(2, 'sleep.html'); };
-            document.getElementById("btn3").onclick = function() { btnClicked(3, 'picture.html'); };
-            document.getElementById("btn4").onclick = function() { btnClicked(4, 'nomeaning.html'); };
+            document.getElementById("btn1").onclick = function() { btnClicked(1, 'picture.html'); };
+            document.getElementById("btn2").onclick = function() { btnClicked(2, 'food.html'); };
+            document.getElementById("btn3").onclick = function() { btnClicked(3, 'music.html'); };
+            document.getElementById("btn4").onclick = function() { btnClicked(4, 'video.html'); };
     
             function btnClicked(btnNumber, url) {
                 localStorage.setItem(`btn${btnNumber}Clicked`, "true");
